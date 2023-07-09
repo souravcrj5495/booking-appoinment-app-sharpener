@@ -1,14 +1,16 @@
 
 const addInput = ()=>{
+localStorage.clear();
 
 //taking the input values     
 let name = document.getElementById('name').value;
 let email = document.getElementById('email').value;
 
-//storing in localstorage
-localStorage.setItem('name', name);
-localStorage.setItem('email',email);
-
-//showing one alert after saving the data
+//Storing in local storage in object form
+let myObj = {
+    name: name,
+    email: email
+};
+localStorage.setItem("UserDetails", JSON.stringify(myObj));
 alert('form data saved !');
 }
